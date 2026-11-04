@@ -1,0 +1,7 @@
+streamlit>=1.40,<1.51
+pandas>=2.1,<2.4
+numpy>=1.26,<2.1
+scikit-learn>=1.4,<1.7
+plotly>=5.24,<7
+openai>=1.60,<3
+pytest>=8,<9
