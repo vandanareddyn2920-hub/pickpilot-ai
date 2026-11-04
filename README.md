@@ -2,9 +2,11 @@
 
 A warehouse operations copilot prototype that turns fictional WMS data into inventory answers, seven-day stockout signals, and reviewable slotting and pick-route recommendations.
 
+**[Launch the live demo](https://pickpilot-ai-vandana.streamlit.app/)** — free demo mode; no API key or sign-in required for inventory examples, risk scores, and slotting proposals.
+
 ![PickPilot operations overview](docs/screenshots/01-overview.jpg)
 
-**Status:** working local prototype, tested on synthetic data. No Oracle connection, production deployment, warehouse user validation, or realized operational savings. Live LLM support is implemented but has not been exercised with a paid API key in this build.
+**Status:** working prototype deployed on Streamlit Community Cloud, tested on synthetic data. No Oracle connection, warehouse user validation, or realized operational savings. Live LLM support is implemented but has not been exercised with a paid API key in this build.
 
 ## Run locally
 
