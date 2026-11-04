@@ -1,8 +1,23 @@
 # ◈ PickPilot AI
 
+[![Prototype checks](https://github.com/vandanareddyn2920-hub/pickpilot-ai/actions/workflows/test.yml/badge.svg)](https://github.com/vandanareddyn2920-hub/pickpilot-ai/actions/workflows/test.yml)
+
 A warehouse operations copilot prototype that turns fictional WMS data into inventory answers, seven-day stockout signals, and reviewable slotting and pick-route recommendations.
 
 **[Launch the live demo](https://pickpilot-ai-vandana.streamlit.app/)** — free demo mode; no API key or sign-in required for inventory examples, risk scores, and slotting proposals.
+
+## Tech stack
+
+Python · Streamlit · SQLite/SQL · pandas/NumPy · scikit-learn · Plotly · optional OpenAI Responses API · pytest · GitHub Actions. No Oracle account is required.
+
+## Project features
+
+- **Inventory Q&A:** four no-key questions with executed SQLite SQL, result tables, and CSV export.
+- **Stockout-risk scoring:** scikit-learn scores for 150 SKUs, with risk thresholds, category filters, and inventory context.
+- **Slotting recommendations:** capacity-checked proposals into vacant, nearer forward bins.
+- **Pick-route comparison:** compare bin-code order with a distance heuristic for a selected order.
+
+[Architecture](#data-and-architecture) · [Screenshots](docs/screenshots) · [Validation](#demo-and-validation) · [Local setup](#run-locally)
 
 ![PickPilot operations overview](docs/screenshots/01-overview.jpg)
 
@@ -28,15 +43,11 @@ python -m pytest -q
 
 The captured environment is recorded in `requirements-tested.txt`. Install that file to reproduce its exact package versions (Python 3.9 on macOS ARM).
 
-## Tech stack
-
-Python · Streamlit · SQLite/SQL · pandas/NumPy · scikit-learn · Plotly · optional OpenAI Responses API · pytest · GitHub Actions. No Oracle account is required.
-
 ## Three use cases
 
 | Supervisor need | Prototype behavior | Evidence |
 |---|---|---|
-| Ask inventory questions | Live LLM translates questions to SQLite SQL; app executes read-only SQL, displays query, rows and a deterministic result summary | Four offline example queries + SQL boundary tests |
+| Ask inventory questions | No-key demo runs four SQL examples; optional LLM adapter generates SQL. Read-only execution displays the query, results and a deterministic summary | Four offline example queries + SQL boundary tests |
 | Prioritize replenishment | Random forest returns a risk score and observed coverage per SKU | Temporal holdout and rule baseline |
 | Improve picking workflows | Capacity-checked moves into vacant forward bins; nearest-neighbor route compared with bin-code order | Ten feasible slotting proposals; route distance cannot exceed comparison route |
 
