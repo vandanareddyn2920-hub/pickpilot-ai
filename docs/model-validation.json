@@ -1,0 +1,13 @@
+{
+  "train_rows": 1800,
+  "test_rows": 450,
+  "test_start": "2026-10-14",
+  "roc_auc": 0.9361,
+  "average_precision": 0.8945,
+  "precision_at_50pct": 0.8392,
+  "recall_at_50pct": 0.7692,
+  "brier_score": 0.095,
+  "baseline_brier": 0.1667,
+  "prevalence": 0.3467,
+  "train_end": "2026-09-30"
+}
